@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 80%);
+}
+
+a, a:visited {
+  color: yellowgreen;
+}
+
+nav a {
+  padding: 5px;
+}
+
+
+
