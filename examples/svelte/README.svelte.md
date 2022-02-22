@@ -2,6 +2,9 @@
 
 Vite Svelte template + basic /pages routing
 
+Start: 
+
+> npm run dev
 
 ## Svelte store subscribing
 

@@ -1,8 +1,10 @@
 # react-vite-template
 
-https://github.com/drodsou/react-vite-template
+Minimal react vite template, with basic /pages routing added
 
-Minimal React/Vite starting template for quick development tinkering, based on Vite official template.
+Start: 
+
+> npm run dev
 
 
 ## React/preact subscribing

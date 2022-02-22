@@ -13,10 +13,13 @@
   window.addEventListener('hashchange', ()=> Page = HashPage());
 </script>
 
-<nav>
-  {#each Object.keys(pages) as page}
-    <a href={'#' + page}>{page}</a>
-  {/each}
-</nav>
+<header>
+  <div>store-svelte</div>
+  <nav>
+    {#each Object.keys(pages) as page}
+      <a href={'#' + page}>{page}</a>
+    {/each}
+  </nav>
+</header>
 
 <svelte:component this={Page}/>

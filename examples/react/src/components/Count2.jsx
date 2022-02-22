@@ -5,10 +5,12 @@ export default function Count2 () {
   const store = useStore(_store);
 
   return (
-    <div>
-      <button onClick={()=>store.action.inc()}>
+    <>
+      <button onClick={()=>store.action.inc()}
+        style={{backgroundColor:store.computed.color('orange','teal')}}
+      >
         C2: {store.state.count}
       </button>
-    </div>
+    </>
   );
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../common.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <header>
+    <div>store-vanilla</div>
+  </header>
+  
+  <button onClick="store.action.inc()"></button>
+  <button onClick="store.action.inc()"></button>
+
+  <script type="module">
+    import store from '../createStoreExample.js';
+
+    window.store = store;  // if using onClick in html, or for debug
+
+    store.subscribe(({state,computed})=>{
+      document.querySelectorAll('button').forEach(button=>{
+        button.innerText = state.count;
+        button.style.backgroundColor = computed.color();
+      })
+    });
+
+  </script>
+  
+</body>
+</html>

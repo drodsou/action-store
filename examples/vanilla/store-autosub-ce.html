@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../common.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- MARKUP -->
+  <header>
+    <div>store-vanilla-autosub</div>
+  </header>
+
+  <!-- <x-count1 s-action="click:inc"></x-count1> -->
+  <x-count1 ></x-count1>
+  <br/>
+  <button s-action="click:inc" s-data="style.backgroundColor:computed.color">
+    C2 <span s-data="innerText:state.count"></span>
+  </button>
+
+
+  <!-- SCRIPT -->
+  <script type="module">
+    import store from '../createStoreExample.js';
+    import {subscribeSData, addEventListenerSAction} from '../../createStoreVanilla.js';
+
+    import './customElements/x-count1.js';
+
+    window.store = store;  // if using onClick in html, or for debug
+
+    store.subscribe(subscribeSData);
+    addEventListenerSAction(store);
+
+
+    
+
+  </script>
+  
+</body>
+</html>

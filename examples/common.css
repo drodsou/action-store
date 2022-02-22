@@ -1,0 +1,39 @@
+body {
+  font-size: 20px;
+  font-family: sans-serif;
+  background-color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 80%);
+  text-align: center;
+  margin: 0;
+}
+
+a, a:visited {
+  color: yellowgreen;
+}
+
+header {
+  padding: 10px;
+  background-color: hsl(0, 0%, 10%);
+  margin-bottom: 20px;
+}
+header div {
+  margin-bottom: 5px;
+}
+
+nav a {
+  padding: 5px;
+}
+
+button {
+  font-size: 20px;
+  width: 80px;
+  cursor:pointer;
+  color: white;
+  border:0;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 10px;
+}
+
+
+

@@ -7,12 +7,12 @@ export default function Count1 () {
   const store = useStore(_store);
 
   return (
-    <div>
+    <>
       <button onClick={()=>store.action.inc()}
-        style={{color:store.computed.color()}}
+        style={{backgroundColor:store.computed.color()}}
       >
         C1: {store.state.count}
       </button>
-    </div>
+    </>
   );
 }

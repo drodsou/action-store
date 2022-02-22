@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './main.css'
+import '../../common.css'
 
 // -- pages
 import Index from './pages/Index';
@@ -23,7 +23,12 @@ function Main () {
 
   return (
     <>
-      <nav>{Object.keys(pages).map((e,i)=><a key={i} href={'#'+e}>{e}</a>)}</nav>
+      
+      <header>
+        <div> store-react</div>
+        <nav>{Object.keys(pages).map((e,i)=><a key={i} href={'#'+e}>{e}</a>)}</nav>
+      </header>
+
       <Page />
     </>
   );
