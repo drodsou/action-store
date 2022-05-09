@@ -13,6 +13,13 @@ store.action.inc = function () {
   // actions are bound to its store, so this works ok 
 };
 
+store.action.component = {
+  inc2() {
+    console.log('inc2 fired')
+    store.state.count +=2;
+  }
+}
+
 store.computed.countHtml = ()=>`<b>${store.state.count}</b>`;
 store.computed.color = (color1='red',color2='green')=> store.state.count % 2 ? color1 : color2; 
 

@@ -12,6 +12,22 @@ export function createStore(state={}) {
     }
   }
 
+  function createActionProxy(obj) {
+    return new Proxy( obj, {
+      get (actionObj, actionName) {
+        console.log('get', actionObj, actionName)
+        if (typeof actionObj[actionName] === 'object') {
+          return createActionProxy(actionObj[actionName]);
+        }
+        return function (...actionArgs) {
+          actionObj[actionName].apply(store, actionArgs);
+          runSubs(actionName, actionArgs);
+        }
+      }
+    })
+  }
+
+
   const store = {
     _subs : subs,         // debug
     _runSubs : runSubs,   // debug
@@ -19,17 +35,12 @@ export function createStore(state={}) {
     state: state,
     computed: {},
 
+
+
     //-- we watch actions, not state changes per se, so you're free 
     //-- to make several state changes per action without triggering subscriptions/renders
     //-- also actions are more concise and readable, as state change is straightforward
-    action:  new Proxy( {}, {
-      get (actionObj, actionName) {
-        return function (...actionArgs) {
-          actionObj[actionName].apply(store, actionArgs);
-          runSubs(actionName, actionArgs);
-        }
-      }
-    }),
+    action:  createActionProxy({}),
 
     // svelte compatible for state AND computed, without need for derived stores (!)
     subscribe(fn, runOnSubscribe=true) {
