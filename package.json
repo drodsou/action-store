@@ -1,0 +1,27 @@
+{
+  "name": "action-store",
+  "version": "0.1.0",
+  "description": "vanilla minimal state management with actions, also compatible with Svelte",
+  "main": "createStore.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drodsou/action-store.git"
+  },
+  "author": "@drodsou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drodsou/action-store/issues"
+  },
+  "homepage": "https://github.com/drodsou/action-store#readme",
+  "devDependencies": {
+    "brotli-cli": "^1.0.3",
+    "esbuild": "^0.14.23",
+    "gzip-cli": "^1.2.0"
+  }
+}
