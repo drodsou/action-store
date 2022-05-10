@@ -1,0 +1,64 @@
+{
+  "id": "cursos-alumnos",
+  "type": "parallel",
+  "states": {
+    "cursos": {
+      "initial": "booting",
+      "states": {
+        "booting": {
+          "on": {
+            "ok": {
+              "target": "data"
+            },
+            "error": {
+              "target": "error"
+            }
+          }
+        },
+        "data": {
+          "on": {
+            "selected": {
+              "target": "#cursos-alumnos.alumnos.booting"
+            },
+            "mark/unmark": {
+              "target": "marking"
+            }
+          }
+        },
+        "error": {},
+        "marking": {
+          "on": {
+            "marked err/ok": {
+              "target": "data"
+            }
+          }
+        }
+      }
+    },
+    "alumnos": {
+      "initial": "idle",
+      "states": {
+        "idle": {},
+        "booting": {
+          "on": {
+            "error": {
+              "target": "error"
+            },
+            "ok": {
+              "target": "data"
+            }
+          }
+        },
+        "error": {},
+        "data": {
+          "on": {
+            "csv": {
+              "target": "data",
+              "internal": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
